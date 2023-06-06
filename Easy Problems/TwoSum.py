@@ -34,5 +34,7 @@ if __name__ == '__main__':
     print('Pass' if sol.twoSum([3, 2, 4], 6) == list([1, 2]) else 'Fail')
     print('Fifth Test Case: ', end=' ')
     print('Pass' if sol.twoSum([3, 3], 6) == list([0, 1]) else 'Fail')
+    print('Sixth Test Case: ', end=' ')
+    print('Pass' if sol.twoSum([3, 4, 1], 4) == list([0, 2]) else 'Fail')
 
 #Verify space and time complexity
