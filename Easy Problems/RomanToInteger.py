@@ -12,24 +12,10 @@ class Solution(object):
         """
 
         roman_to_int_mapping = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-        resultInteger = 0
-        start = s[0]
-        limit = len(s)
-        for idx in range(1, limit):
-            end = s[idx]
-            if ((start == 'I' and end == 'V') or (start == 'I' and end == 'X') or
-                    (start == 'X' and end == 'L') or (start == 'X' and end == 'C') or
-                    (start == 'C' and end == 'D') or (start == 'C' and end == 'M')):
-                resultInteger = resultInteger + (roman_to_int_mapping[end] - roman_to_int_mapping[start])
-                start = end
-            else:
-                if (limit - idx) == 1:
-                    resultInteger = resultInteger + (roman_to_int_mapping[end] + roman_to_int_mapping[start])
-                else:
-                    resultInteger = resultInteger + roman_to_int_mapping[start]
-                    start = end
-
-        return resultInteger
+        s = s.replace('IV', 'IIII').replace('IX', 'VIIII').replace('XL', 'XXXX').replace('XC', 'LXXXX').replace('CD',
+                                                                                                                'CCCC').replace(
+            'CM', 'DCCCC')
+        return sum(map(lambda x: roman_to_int_mapping[x], s))
 
 
 if __name__ == '__main__':
@@ -42,9 +28,9 @@ if __name__ == '__main__':
     print('Pass' if sol.romanToInt('IX') == 9 else 'Fail')
     print('Fourth Test Case: ', end='')
     print('Pass' if sol.romanToInt('XIX') == 19 else 'Fail')
-    # print('Fifth Test Case: ', end='')
-    # print('Pass' if sol.romanToInt('LVIII') == 58 else 'Fail')
-    # print('Sixth Test Case: ', end='')
-    # print('Pass' if sol.romanToInt('III') == 3 else 'Fail')
-    # print('Seventh Test Case: ', end='')
-    # print('Pass' if sol.romanToInt('MCMXCIV') == 1994 else 'Fail')
+    print('Fifth Test Case: ', end='')
+    print('Pass' if sol.romanToInt('LVIII') == 58 else 'Fail')
+    print('Sixth Test Case: ', end='')
+    print('Pass' if sol.romanToInt('III') == 3 else 'Fail')
+    print('Seventh Test Case: ', end='')
+    print('Pass' if sol.romanToInt('MCMXCIV') == 1994 else 'Fail')
