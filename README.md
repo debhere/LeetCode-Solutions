@@ -9,6 +9,7 @@
 1. Add below two lines in the gitattributes to include SQL in the language statistics.
 
 	*.sql linguist-language=sql
+	
 	*.sql linguist-detectable=true
 
 ### Python
