@@ -15,3 +15,4 @@
 ### Python
 
 1. say nums[] is an existing list. Now, nums[:] means creating a new list as nums but it is a not the same object but a different one.
+2. O(logn) is common complexity, where there is a concept of halving or say to perform some action on next element based on some conditions.
