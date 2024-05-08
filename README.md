@@ -12,6 +12,51 @@
 	
 	*.sql linguist-detectable=true
 
+2. auto_increment in MySQL is similar to Identity() in SQL-Server.
+3. Constraint naming inline to column declaration is not permissible in MySQL
+
+```
+Create Table Products
+(product_id int Constraint PK_Products Primary Key Identity(1,1),
+product_name varchar(100),
+product_category varchar(50))
+```
+The above is a valid query in SQL-Server whereas in MySQL it becomes
+
+```
+Create Table Products
+(product_id int Primary Key auto_increment,
+product_name varchar(100),
+product_category varchar(50));
+```
+
+4. Foreign key declaration for MySQL can only be done at the end of table declaration
+
+```
+Create Table Orders
+(product_id int ,
+order_date date,
+unit int,
+FOREIGN KEY (product_id) REFERENCES Products(product_id));
+```
+
+5. While inserting values into another table with foreign key constraints, MySQL throws an error until setting the below line.
+
+```
+SET FOREIGN_KEY_CHECKS=0;
+```
+
+6. Even for auto_increment, need to mention the column names the values being inserted
+
+```
+insert into Products (product_name, product_category) values
+('Leetcode Solutions', 'Book'),
+('Jewels of Stringology', 'Book'),
+('HP', 'Laptop'),
+('Lenovo', 'Laptop'),
+('Leetcode Kit', 'T-shirt');
+```
+
 ### Python
 
 1. say nums[] is an existing list. Now, nums[:] means creating a new list as nums but it is a not the same object but a different one.
