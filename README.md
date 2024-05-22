@@ -59,10 +59,10 @@ insert into Products (product_name, product_category) values
 
 7. Wildcard characters like [], -, ^ does not work in MySQL. Instead one can use 'regexp' keyword for a pattern matching in the query in MySQL. Here is an example
 
-'''
+```
 select * from Users
 where mail regexp '^[a-zA-Z][a-zA-Z0-9_.-]*@leetcode[.]com$';
-'''
+```
 
 
 
