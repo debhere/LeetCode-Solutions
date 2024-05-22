@@ -57,6 +57,8 @@ insert into Products (product_name, product_category) values
 ('Leetcode Kit', 'T-shirt');
 ```
 
+7. Wildcard characters like [], -, ^ does not work in MySQL. Instead one can use 'regexp' keyword for a pattern in the query.
+
 ### Python
 
 1. say nums[] is an existing list. Now, nums[:] means creating a new list as nums but it is a not the same object but a different one.
