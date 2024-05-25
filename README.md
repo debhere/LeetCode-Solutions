@@ -66,6 +66,26 @@ where mail regexp '^[a-zA-Z][a-zA-Z0-9_.-]*@leetcode[.]com$';
 
 8. Similar to ISNULL(expr, value) in SQL-Server, MySQL has IFNULL(expr, value) function that can return a specific value if the expression is NULL.
 
+
+9. Display selected values as commas seperated string using function STRING_AGG() in SQL-Server and GROUP_CONCAT() in MySQL.
+
+```
+select sell_date, count(product) num_sold, STRING_AGG(product, ',') as products
+from (select distinct * from Activities) T
+group by sell_date
+```
+
+```
+select sell_date, count(distinct product) num_sold, group_concat(distinct product order by product asc) products
+from Activities
+group by sell_date
+```
+
+
+
+
+
+
 ### Python
 
 1. say nums[] is an existing list. Now, nums[:] means creating a new list as nums but it is a not the same object but a different one.
