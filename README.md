@@ -82,7 +82,13 @@ group by sell_date
 ```
 
 
+10. DATEDIFF works both for SQL-Server and MySQL but with a small difference in thr syntax. In SQL-Server, we need to mention the interval.
 
+```bash
+
+DATEDIFF(interval, date1, date2) returns number of days when interval = 'DAY' -- SQL server 
+DATEDIFF(date1, date2) returns number of days -- MySQL
+```
 
 
 
